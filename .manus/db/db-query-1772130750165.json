@@ -1,0 +1,70 @@
+{
+  "query": "SELECT title, date, source, category FROM legalNews ORDER BY date DESC LIMIT 10;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2m56YMNH1uTfX7x.root --database meFa9hA9naTT9DuENbAe2Y --execute SELECT title, date, source, category FROM legalNews ORDER BY date DESC LIMIT 10;",
+  "rows": [
+    {
+      "title": "Traktat o wzmocnionej współpracy i przyjaźni między Rzecząpospolitą Polską a Republiką Francuską, podpisany w Nancy dnia 9 maja 2025 r.",
+      "date": "9.05.2026",
+      "source": "Dziennik Ustaw",
+      "category": "nowelizacja"
+    },
+    {
+      "title": "Obwieszczenie Ministra Infrastruktury z dnia 10 lutego 2026 r. w sprawie ogłoszenia stawek opłat za czynności związane z wyznaczaniem stref geograficznych dla systemów bezzałogowych statków powietrznych, przedłużaniem okresu ich obowiązywania i ich ponownym wyznaczaniem obowiązujących w 2026 r.",
+      "date": "9.02.2026",
+      "source": "Monitor Polski",
+      "category": "nowelizacja"
+    },
+    {
+      "title": "Rozporządzenie Ministra Infrastruktury z dnia 10 lutego 2026 r. zmieniające rozporządzenie w sprawie zakresu, warunków, terminów i sposobu przeprowadzania badań technicznych tramwajów i trolejbusów oraz jednostek wykonujących te badania",
+      "date": "9.02.2026",
+      "source": "Dziennik Ustaw",
+      "category": "nowelizacja"
+    },
+    {
+      "title": "Obwieszczenie Ministra Infrastruktury z dnia 10 lutego 2026 r. w sprawie ogłoszenia stawek opłat lotniczych obowiązujących w 2026 r.",
+      "date": "9.02.2026",
+      "source": "Monitor Polski",
+      "category": "nowelizacja"
+    },
+    {
+      "title": "Rozporządzenie Ministra Rolnictwa i Rozwoju Wsi z dnia 10 lutego 2026 r. zmieniające rozporządzenie w sprawie norm oraz szczegółowych warunków ich stosowania",
+      "date": "9.02.2026",
+      "source": "Dziennik Ustaw",
+      "category": "nowelizacja"
+    },
+    {
+      "title": "Rozporządzenie Ministra Rolnictwa i Rozwoju Wsi z dnia 10 lutego 2026 r. zmieniające rozporządzenie w sprawie dokonywania zgłoszeń, składania wniosków lub przekazywania informacji do komputerowej bazy danych",
+      "date": "9.02.2026",
+      "source": "Dziennik Ustaw",
+      "category": "nowelizacja"
+    },
+    {
+      "title": "Komunikat Prezesa Głównego Urzędu Statystycznego z dnia 9 lutego 2026 r. w sprawie kwoty bazowej w 2025 r.",
+      "date": "8.02.2026",
+      "source": "Monitor Polski",
+      "category": "nowelizacja"
+    },
+    {
+      "title": "Komunikat Prezesa Głównego Urzędu Statystycznego z dnia 9 lutego 2026 r. w sprawie przeciętnego wynagrodzenia w gospodarce narodowej w 2025 r.",
+      "date": "8.02.2026",
+      "source": "Monitor Polski",
+      "category": "nowelizacja"
+    },
+    {
+      "title": "Obwieszczenie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 9 lutego 2026 r. w sprawie ogłoszenia jednolitego tekstu ustawy o kontroli w administracji rządowej",
+      "date": "8.02.2026",
+      "source": "Dziennik Ustaw",
+      "category": "nowelizacja"
+    },
+    {
+      "title": "Komunikat Prezesa Głównego Urzędu Statystycznego z dnia 9 lutego 2026 r. w sprawie przeciętnego wynagrodzenia w czwartym kwartale 2025 r.",
+      "date": "8.02.2026",
+      "source": "Monitor Polski",
+      "category": "nowelizacja"
+    }
+  ],
+  "messages": [],
+  "stdout": "title\tdate\tsource\tcategory\nTraktat o wzmocnionej współpracy i przyjaźni między Rzecząpospolitą Polską a Republiką Francuską, podpisany w Nancy dnia 9 maja 2025 r.\t9.05.2026\tDziennik Ustaw\tnowelizacja\nObwieszczenie Ministra Infrastruktury z dnia 10 lutego 2026 r. w sprawie ogłoszenia stawek opłat za czynności związane z wyznaczaniem stref geograficznych dla systemów bezzałogowych statków powietrznych, przedłużaniem okresu ich obowiązywania i ich ponownym wyznaczaniem obowiązujących w 2026 r.\t9.02.2026\tMonitor Polski\tnowelizacja\nRozporządzenie Ministra Infrastruktury z dnia 10 lutego 2026 r. zmieniające rozporządzenie w sprawie zakresu, warunków, terminów i sposobu przeprowadzania badań technicznych tramwajów i trolejbusów oraz jednostek wykonujących te badania\t9.02.2026\tDziennik Ustaw\tnowelizacja\nObwieszczenie Ministra Infrastruktury z dnia 10 lutego 2026 r. w sprawie ogłoszenia stawek opłat lotniczych obowiązujących w 2026 r.\t9.02.2026\tMonitor Polski\tnowelizacja\nRozporządzenie Ministra Rolnictwa i Rozwoju Wsi z dnia 10 lutego 2026 r. zmieniające rozporządzenie w sprawie norm oraz szczegółowych warunków ich stosowania\t9.02.2026\tDziennik Ustaw\tnowelizacja\nRozporządzenie Ministra Rolnictwa i Rozwoju Wsi z dnia 10 lutego 2026 r. zmieniające rozporządzenie w sprawie dokonywania zgłoszeń, składania wniosków lub przekazywania informacji do komputerowej bazy danych\t9.02.2026\tDziennik Ustaw\tnowelizacja\nKomunikat Prezesa Głównego Urzędu Statystycznego z dnia 9 lutego 2026 r. w sprawie kwoty bazowej w 2025 r.\t8.02.2026\tMonitor Polski\tnowelizacja\nKomunikat Prezesa Głównego Urzędu Statystycznego z dnia 9 lutego 2026 r. w sprawie przeciętnego wynagrodzenia w gospodarce narodowej w 2025 r.\t8.02.2026\tMonitor Polski\tnowelizacja\nObwieszczenie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 9 lutego 2026 r. w sprawie ogłoszenia jednolitego tekstu ustawy o kontroli w administracji rządowej\t8.02.2026\tDziennik Ustaw\tnowelizacja\nKomunikat Prezesa Głównego Urzędu Statystycznego z dnia 9 lutego 2026 r. w sprawie przeciętnego wynagrodzenia w czwartym kwartale 2025 r.\t8.02.2026\tMonitor Polski\tnowelizacja\n",
+  "stderr": "",
+  "execution_time_ms": 138
+}

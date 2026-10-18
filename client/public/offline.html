@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tryb Offline - Stefan</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, #e0f2fe 0%, #ddd6fe 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .container {
+      background: white;
+      border-radius: 16px;
+      padding: 48px 32px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    
+    .icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 24px;
+      background: #e0f2fe;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+    }
+    
+    h1 {
+      font-size: 24px;
+      color: #1e293b;
+      margin-bottom: 12px;
+    }
+    
+    p {
+      color: #64748b;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    
+    .features {
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 24px 0;
+      text-align: left;
+    }
+    
+    .features h2 {
+      font-size: 16px;
+      color: #1e293b;
+      margin-bottom: 12px;
+    }
+    
+    .features ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .features li {
+      padding: 8px 0;
+      color: #64748b;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .features li::before {
+      content: "✓";
+      color: #10b981;
+      font-weight: bold;
+    }
+    
+    .button {
+      background: #0ea5e9;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    
+    .button:hover {
+      background: #0284c7;
+    }
+    
+    .status {
+      margin-top: 24px;
+      padding: 12px;
+      background: #fef3c7;
+      border-radius: 8px;
+      color: #92400e;
+      font-size: 14px;
+    }
+    
+    .status.online {
+      background: #d1fae5;
+      color: #065f46;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon">⚖️</div>
+    <h1>Tryb Offline</h1>
+    <p>Brak połączenia z internetem. Niektóre funkcje są ograniczone, ale możesz nadal korzystać z aplikacji.</p>
+    
+    <div class="features">
+      <h2>Dostępne offline:</h2>
+      <ul>
+        <li>Przeglądanie zapisanych notatek</li>
+        <li>Dostęp do szablonów pism</li>
+        <li>Odczyt historii czatu</li>
+        <li>Tworzenie nowych notatek (zsynchronizują się później)</li>
+      </ul>
+    </div>
+    
+    <div id="status" class="status">
+      🔌 Sprawdzanie połączenia...
+    </div>
+    
+    <a href="/" class="button" style="margin-top: 16px;">Wróć do aplikacji</a>
+  </div>
+  
+  <script>
+    // Check connection status
+    function updateStatus() {
+      const statusEl = document.getElementById('status');
+      
+      if (navigator.onLine) {
+        statusEl.textContent = '✓ Połączenie przywrócone - możesz wrócić do aplikacji';
+        statusEl.className = 'status online';
+      } else {
+        statusEl.textContent = '🔌 Brak połączenia z internetem';
+        statusEl.className = 'status';
+      }
+    }
+    
+    // Update status on load
+    updateStatus();
+    
+    // Listen for connection changes
+    window.addEventListener('online', updateStatus);
+    window.addEventListener('offline', updateStatus);
+    
+    // Check every 5 seconds
+    setInterval(updateStatus, 5000);
+  </script>
+</body>
+</html>

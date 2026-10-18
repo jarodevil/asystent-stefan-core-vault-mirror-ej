@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stefan - Czyszczenie Cache</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        .button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin: 10px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+        }
+        .button.secondary {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+        }
+        .button.secondary:hover {
+            box-shadow: 0 15px 40px rgba(245, 87, 108, 0.6);
+        }
+        .icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+        .warning {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            color: #856404;
+        }
+        .success {
+            background: #d4edda;
+            border: 2px solid #28a745;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            color: #155724;
+            display: none;
+        }
+        .steps {
+            text-align: left;
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        .steps h3 {
+            color: #667eea;
+            margin-top: 0;
+        }
+        .steps ul {
+            padding-left: 20px;
+        }
+        .steps li {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        #progress {
+            display: none;
+            margin: 20px 0;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 30px;
+            background: #e0e0e0;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            width: 0%;
+            transition: width 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">🧹</div>
+        <h1>Czyszczenie Cache Stefana</h1>
+        <p class="subtitle">Usuń starą instalację przed zainstalowaniem nowego Stefana</p>
+        
+        <div class="warning">
+            <strong>⚠️ Uwaga:</strong> Ta operacja usunie wszystkie lokalne dane Stefana (cookies, localStorage, sessionStorage, IndexedDB, Service Worker). Historia czatu zostanie zachowana w bazie danych.
+        </div>
+        
+        <div class="steps">
+            <h3>📋 Co zostanie wyczyszczone:</h3>
+            <ul>
+                <li>✅ Cookies (sesja logowania)</li>
+                <li>✅ localStorage (lokalna historia czatu)</li>
+                <li>✅ sessionStorage (dane tymczasowe)</li>
+                <li>✅ IndexedDB (baza danych przeglądarki)</li>
+                <li>✅ Service Worker (stara instalacja PWA)</li>
+            </ul>
+        </div>
+        
+        <button onclick="clearCache()" class="button">
+            🧹 Wyczyść Cache
+        </button>
+        
+        <div id="progress">
+            <p>Czyszczenie w toku...</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+        
+        <div class="success" id="success">
+            <strong>✅ Cache wyczyszczony pomyślnie!</strong><br>
+            Teraz możesz zainstalować nowego Stefana.
+            <br><br>
+            <a href="/" class="button">🚀 Otwórz Nowego Stefana</a>
+        </div>
+        
+        <p style="margin-top: 30px; color: #999; font-size: 0.9em;">
+            Wersja: 4.8.0 | Data: 4 kwietnia 2026<br>
+            Kontakt: pasjar1979@gmail.com
+        </p>
+    </div>
+
+    <script>
+        async function clearCache() {
+            const progressBar = document.getElementById('progressFill');
+            const progressDiv = document.getElementById('progress');
+            const successDiv = document.getElementById('success');
+            
+            progressDiv.style.display = 'block';
+            
+            try {
+                // 1. Wyczyść cookies
+                progressBar.style.width = '20%';
+                document.cookie.split(";").forEach(function(c) { 
+                    document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); 
+                });
+                await sleep(500);
+                
+                // 2. Wyczyść localStorage
+                progressBar.style.width = '40%';
+                localStorage.clear();
+                await sleep(500);
+                
+                // 3. Wyczyść sessionStorage
+                progressBar.style.width = '60%';
+                sessionStorage.clear();
+                await sleep(500);
+                
+                // 4. Wyczyść IndexedDB
+                progressBar.style.width = '80%';
+                const databases = await window.indexedDB.databases();
+                databases.forEach(db => {
+                    window.indexedDB.deleteDatabase(db.name);
+                });
+                await sleep(500);
+                
+                // 5. Wyczyść Service Worker
+                progressBar.style.width = '100%';
+                if ('serviceWorker' in navigator) {
+                    const registrations = await navigator.serviceWorker.getRegistrations();
+                    for (let registration of registrations) {
+                        await registration.unregister();
+                    }
+                }
+                await sleep(500);
+                
+                // Pokaż sukces
+                progressDiv.style.display = 'none';
+                successDiv.style.display = 'block';
+                
+            } catch (error) {
+                console.error('Błąd podczas czyszczenia cache:', error);
+                alert('Wystąpił błąd podczas czyszczenia cache. Spróbuj ponownie.');
+                progressDiv.style.display = 'none';
+            }
+        }
+        
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+    </script>
+</body>
+</html>

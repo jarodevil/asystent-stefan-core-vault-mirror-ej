@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-10-08T22:08:41.248Z",
+  "baselineGeneratedAt": "2026-10-08T22:08:38.712Z",
+  "decision": "fast-audit-pass",
+  "criticalChanges": 0,
+  "changes": [],
+  "recommendedTests": [],
+  "candidateFile": "/home/ubuntu/stefan-heartbeat-migration-work/audit-kit/stefan-audit-candidate.json"
+}

@@ -1,0 +1,22 @@
+--- PROJECT ---
+5b25d86
+5b25d86 2026-04-04 18:16:19 -0400 Checkpoint: Stefan 5.6.0: DocumentPreviewModal (pop-up z podglądem, druk A4, pobierz TXT, zapis do DB, przypisanie do karty klienta), tabela generatedDocuments, documents router tRPC (8 procedur), db-documents.ts, integracja z KSeF.tsx. 0 błędów TypeScript, 189/189 testów pass.
+--- FILE VERSION ---
+todo.md:7:| **Wersja** | 5.6.0 |
+todo.md:9:| **Ostatni Checkpoint** | Stefan 5.6.0 |
+todo.md:60:## ✅ Ukończone — Wersja 4.8.0 (2026-04-04)
+todo.md:71:## ✅ Ukończone — Wersja 4.7.0 (2026-04-03)
+todo.md:84:## ✅ Ukończone — Wersja 4.6.0 (2026-04-03)
+todo.md:98:## ✅ Ukończone — Wersja 4.5.0 (2026-04-02)
+todo.md:113:## ✅ Ukończone — Wersja 4.4.x (2026-02-16 → 2026-02-24)
+todo.md:134:- [x] 4.3.3 — Gemini Preview → Stable (gemini-3-pro, gemini-3-flash) — Checkpoint 0225663d
+todo.md:190:| AI | Google Gemini API (gemini-3-pro, gemini-3-flash), temperatura 0.1 |
+todo.md:219:- [x] Aktualizacja modelu: gemini-2.5-pro (główny) + gemini-2.5-flash (fallback przy 80% budżetu)
+todo.md:239:## ✅ Stefan 5.6.0 — Pop-up podglądu dokumentu + zapis do bazy klientów — GOTOWE
+todo.md:261:## 🔄 Stefan 5.6.0 — brakujące elementy dokumentów
+MANIFEST.md:60:  model: "gemini-3-pro",           // Domyślny - najlepszy reasoning
+MANIFEST.md:234:| Data | Wersja | Zmiana | Autor |
+MANIFEST.md:254:**Wersja Stefana:** 4.8.0
+--- LIVE MODELS ---
+{"data":[{"id":"claude-haiku-4-5","object":"model","created":1720535909,"owned_by":"0,5,7","permission":null,"root":"","parent":"","capabilities":{"builtin_tools":{"web_search":{"enabled":true,"type":"web_search"}}}},{"id":"claude-opus-4-6","object":"model","created":1720535909,"owned_by":"0,5,7","permission":null,"root":"","parent":"","capabilities":{"builtin_tools":{"web_search":{"enabled":true,"type":"web_search"}}}},{"id":"claude-opus-4-7","object":"model","created":1720535909,"owned_by":"0,5,7","permission":null,"root":"","parent":"","capabilities":{"builtin_tools":{"web_search":{"enabled":true,"type":"web_search"}}}},{"id":"claude-sonnet-4-6","object":"model","created":1720535909,"owned_by":"0,5,7","permission":null,"root":"","parent":"","capabilities":{"builtin_tools":{"web_search":{"enabled":true,"type":"web_search"}}}},{"id":"gemini-3.1-pro-preview","object":"model","created":1762007892,"owned_by":"0,5","permission":null,"root":"","parent":"","capabilities":{"builtin_tools":{"web_search":{"enabled":true,"type":"web_search"}}}},{"id":"gemini-3-flash-preview","object":"model","created":1766063712,"owned_by":"0,5","permission":null,"root":"","parent":"","capabilities":{"builtin_tools":{"web_search":{"enabled":true,"type":"web_search"}}}},{"id":"gpt-5","object":"model","created":1753108057,"owned_by":"0,3,5","permission":null,"root":"","parent":"","capabilities":{"builtin_tools":{"web_search":{"enabled":true,"type":"web_search"}}}},{"id":"gpt-5.5","object":"model","created":1753108057,"owned_by":"0,3,5","permission":null,"root":"","parent":"","capabilities":{"builtin_tools":{"web_search":{"enabled":true,"type":"web_search"}}}},{"id":"gpt-5-mini","object":"model","created":1754591426,"owned_by":"0,5","permission":null,"root":"","parent":"","capabilities":{"builtin_tools":{"web_search":{"enabled":true,"type":"web_search"}}}},{"id":"gpt-5-nano","object":"model","created":1753108057,"owned_by":"0,5","permission":null,"root":"","parent":"","capabilities":{"builtin_tools":{"web_search":{"enabled":true,"type":"web_search"}}}}],"capability_prompt":"The capabilities object describes which built-in tools are supported by each model.\n\nbuiltin_tools:\n- builtin_tools.\u003ctool_type\u003e.enabled: Whether the model supports the built-in tool.\n- builtin_tools.web_search.web_search_tool_conf.max_uses: Optional maximum number of web search calls the model may perform for one request.\n- builtin_tools.web_search.web_search_tool_conf.allowed_domains: Optional allowlist of domains that web search results may come from.\n- builtin_tools.web_search.web_search_tool_conf.blocked_domains: Optional blocklist of domains that web search results must not come from.\n- builtin_tools.web_search.web_search_tool_conf.search_context_size: Optional search context size preference. Typical values are low, medium, or high.\n- builtin_tools.web_search.web_search_tool_conf.user_location: Optional approximate user location used to improve geographically relevant search results.\n\nIf a capability is false, null, or absent, callers should treat the related tool as unsupported for that model."}
+

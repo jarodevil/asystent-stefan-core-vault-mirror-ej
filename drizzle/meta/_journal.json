@@ -1,0 +1,76 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1764351068929,
+      "tag": "0000_true_dagger",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1765810255796,
+      "tag": "0001_tense_tusk",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1766576343487,
+      "tag": "0002_third_rumiko_fujikawa",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1768557988780,
+      "tag": "0003_fast_wiccan",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1771363659211,
+      "tag": "0004_polite_bedlam",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1775258957368,
+      "tag": "0005_dusty_killraven",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1775305588225,
+      "tag": "0006_faulty_steel_serpent",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "5",
+      "when": 1775313154216,
+      "tag": "0007_crazy_scalphunter",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "5",
+      "when": 1775318822376,
+      "tag": "0008_sharp_sheva_callister",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "5",
+      "when": 1791493649053,
+      "tag": "0009_spotty_dreadnoughts",
+      "breakpoints": true
+    }
+  ]
+}

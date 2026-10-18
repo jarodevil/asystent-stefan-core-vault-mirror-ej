@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-09-05T09:12:08.785Z",
+  "baselineGeneratedAt": "2026-09-05T09:11:52.462Z",
+  "decision": "fast-audit-pass",
+  "criticalChanges": 0,
+  "changes": [],
+  "recommendedTests": [],
+  "candidateFile": "/home/ubuntu/kancelariaai/audit-kit/stefan-audit-candidate.json"
+}

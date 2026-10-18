@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-09-05T09:11:52.462Z",
+  "baselineGeneratedAt": "2026-09-05T09:10:32.270Z",
+  "decision": "standard-change-review",
+  "criticalChanges": 0,
+  "changes": [
+    {
+      "path": "package.json",
+      "type": "modified",
+      "sha256": "b5f4c126f032a63d06e16eccc86aedba7a20509a97c5f3e5739b340175ce2390",
+      "tier": "standard",
+      "contracts": []
+    },
+    {
+      "path": "scripts/stefan-diff-audit.mjs",
+      "type": "added",
+      "sha256": "34cdd42317a9cbf9ac3d2e030a662ead1398d50bbb773a273a0480f2a7f8fd05",
+      "tier": "standard",
+      "contracts": []
+    },
+    {
+      "path": "server/_core/stefan-audit-pack.test.ts",
+      "type": "modified",
+      "sha256": "7a8f246709ce5b5339937198e0568c43696f75b4406b857e56d9e06095d60ee2",
+      "tier": "test",
+      "contracts": []
+    }
+  ],
+  "recommendedTests": [],
+  "candidateFile": "/home/ubuntu/kancelariaai/audit-kit/stefan-audit-candidate.json"
+}

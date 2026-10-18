@@ -1,0 +1,1178 @@
+{
+  "schemaVersion": "1.0",
+  "product": "System Stefan",
+  "generatedAt": "2026-10-17T08:27:17.823Z",
+  "contracts": [
+    {
+      "id": "llm-safety",
+      "tier": "critical",
+      "description": "Verified legal model routing, source gate, prompt injection handling and runtime compatibility probe.",
+      "paths": [
+        "server/_core/llm.ts",
+        "server/_core/llm-safety.ts",
+        "server/_core/legal-model-gateway.ts",
+        "server/_core/model-compatibility.ts",
+        "server/db-model-audit.ts",
+        "server/routers.ts"
+      ],
+      "tests": [
+        "server/_core/legal-model-gateway.test.ts",
+        "server/_core/llm-safety.test.ts",
+        "server/_core/model-compatibility.test.ts"
+      ]
+    },
+    {
+      "id": "legal-data-ksef",
+      "tier": "critical",
+      "description": "Government-source KSeF monitoring, ELI ingestion and legal-context injection.",
+      "paths": [
+        "server/_core/ksef-monitor.ts",
+        "server/_core/eli-api-client.ts",
+        "server/_core/rss-cron.ts",
+        "server/ksef-knowledge.ts"
+      ],
+      "tests": [
+        "server/ksef-monitor.test.ts",
+        "server/ksef.test.ts",
+        "server/ksef-templates.test.ts"
+      ]
+    },
+    {
+      "id": "persistence-and-access",
+      "tier": "critical",
+      "description": "Database schema, user isolation and durable chat, note and generated-document data.",
+      "paths": [
+        "drizzle/schema.ts",
+        "server/db-sessions.ts",
+        "server/db-notes.ts",
+        "server/db-documents.ts",
+        "server/_core/system-cache.ts"
+      ],
+      "tests": [
+        "server/auth.logout.test.ts",
+        "server/ksef-client-cards.test.ts"
+      ]
+    },
+    {
+      "id": "pwa-and-runtime",
+      "tier": "critical",
+      "description": "React singleton, Vite resolution, Service Worker freshness and protected asset delivery.",
+      "paths": [
+        "vite.config.ts",
+        "server/_core/vite.ts",
+        "server/_core/release-version.ts",
+        "client/index.html",
+        "client/public/sw.js",
+        "server/_core/storageProxy.ts"
+      ],
+      "tests": [
+        "server/_core/pwa-development-guard.test.ts",
+        "server/_core/release-version.test.ts",
+        "client/src/lib/releaseConsistency.test.ts"
+      ]
+    },
+    {
+      "id": "document-integrity",
+      "tier": "critical",
+      "description": "Generated documents, print/PDF surfaces and mandatory Jaro'Devil signature.",
+      "paths": [
+        "client/src/components/DocumentPreviewModal.tsx",
+        "client/src/lib/brandSignature.ts",
+        "client/src/pages/KsefClientCards.tsx",
+        "client/src/pages/Templates.tsx",
+        "client/src/pages/Analysis.tsx",
+        "server/_core/pdf-export.ts"
+      ],
+      "tests": [
+        "server/_core/document-signature.test.ts",
+        "server/ksef-templates.test.ts"
+      ]
+    }
+  ],
+  "files": {
+    "server/_core/archive-cron.ts": {
+      "sha256": "f9bcde9e6d79d6036212a74cabcc23065969b560306c98a4dea5e21193b407e5",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/_core/automation-reliability.test.ts": {
+      "sha256": "276711c450bd00d565bb5e1b6a0ea32b4a545dc76497da47c10c5d502a603014",
+      "tier": "test",
+      "contracts": []
+    },
+    "server/_core/backup-cron.ts": {
+      "sha256": "2da5401d9597f39408e3141476fe5a2c10cb83d062ce5ea1c08ec2a5981a42e2",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/_core/backup-secret-health.test.ts": {
+      "sha256": "8213cdeae5871fa59e12dbfc6ed4de397a436a53877659d4b59956f65a6e021c",
+      "tier": "test",
+      "contracts": []
+    },
+    "server/_core/backup-secret-health.ts": {
+      "sha256": "676963ac74d2633572ee554dcafbbf80ca3c68048e355fefb860580f1964dbfd",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/_core/context-manager.ts": {
+      "sha256": "26ec92617d1310a61f2b9643f7bee05992f062490a84617ffade23094ac6903a",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/_core/context.ts": {
+      "sha256": "a43ea9ca8624270a83857d61a7154f17c48bb2c19126d1ee037a37345f6bda86",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/_core/cookies.ts": {
+      "sha256": "9a09d456e37b11835fd63a6243f186bde21be9e55ee636a928a520a568762ebd",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/_core/dataApi.ts": {
+      "sha256": "194ef8e309abde283a1132aa383af10ae583e27e983afa30dfcece3aa9ce27a7",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/_core/document-signature.test.ts": {
+      "sha256": "a5a4755388f2e14421110c6c6e33ba8ebb4873a31d8235f4ce15af0863217435",
+      "tier": "test",
+      "contracts": []
+    },
+    "server/_core/eli-api-client.ts": {
+      "sha256": "9ffa62c836c47fecd3be60b2bbb6b865c00ce713325d2329931bfb34e94ea801",
+      "tier": "critical",
+      "contracts": [
+        "legal-data-ksef"
+      ]
+    },
+    "server/_core/env.ts": {
+      "sha256": "bbda2398eff8097d5b1d7e75c6b153150c6416df65327672e9f4b97c46738063",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/_core/heartbeat.ts": {
+      "sha256": "e9070208f34813a427d4a79207819acc2ac0d1de5244b4db55fe3a94bfe3f950",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/_core/imageGeneration.ts": {
+      "sha256": "ded064bba9a74a5463c6888b4b865302b3eabdbe484f13358c9508d140ed7004",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/_core/index.ts": {
+      "sha256": "5103e81601558f73268d5282726bb82094af21a51b9c8661ddbcbeabdb826cc5",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/_core/ksef-monitor.ts": {
+      "sha256": "6918e2bc7de6df375e8cecdeca73f3d47379c71d213c98aec7c3c0b7415108cb",
+      "tier": "critical",
+      "contracts": [
+        "legal-data-ksef"
+      ]
+    },
+    "server/_core/ksef-refresh.ts": {
+      "sha256": "3f5528359542f43f5fed5c102f1e3e066f791078a15ce86ed10f7f1eb8d94be2",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/_core/ksef-ui-contract.test.ts": {
+      "sha256": "91e7cb03e05cd44c0a3ae01d7654421612c1b7605af19ba98cf0344eb479b55d",
+      "tier": "test",
+      "contracts": []
+    },
+    "server/_core/legal-model-gateway.test.ts": {
+      "sha256": "8eee2c5f34bb8a7319b25b869279a62f4803980ec3baf87c1e2cba736af4c9bb",
+      "tier": "test",
+      "contracts": []
+    },
+    "server/_core/legal-model-gateway.ts": {
+      "sha256": "005431766aee19a1fac9f75ecdb0cf3028ffc9cccc02a4491659a4a2e0aad067",
+      "tier": "critical",
+      "contracts": [
+        "llm-safety"
+      ]
+    },
+    "server/_core/legal-news-refresh.ts": {
+      "sha256": "3741efc9927861d87aebfec6dcdd0b55a058b98c319754068167bac80184d4fc",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/_core/legal-source-policy.test.ts": {
+      "sha256": "17117c627f4922f10cb1643bbc1c66da5b5f95808c070c6427dd13a7ec177f55",
+      "tier": "test",
+      "contracts": []
+    },
+    "server/_core/legal-source-policy.ts": {
+      "sha256": "8a647364c460467433d1d0858ebad31ce0919d74e86ff7c504009e4bbc646d58",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/_core/llm-safety.test.ts": {
+      "sha256": "22d5a16c3ad29f92e527efae8e63794ea272bb0114d25224e78af6d6c51ba213",
+      "tier": "test",
+      "contracts": []
+    },
+    "server/_core/llm-safety.ts": {
+      "sha256": "b0f4d78219d1ed36ab6e64d8c8b70534e2e782dc3dafc4a9ea183c606e980417",
+      "tier": "critical",
+      "contracts": [
+        "llm-safety"
+      ]
+    },
+    "server/_core/llm.ts": {
+      "sha256": "63e87ff59e4bf55eea716db14f1edc17493940dd105eb165f9561550bb48fae5",
+      "tier": "critical",
+      "contracts": [
+        "llm-safety"
+      ]
+    },
+    "server/_core/map.ts": {
+      "sha256": "c04f24ee38ef6840d56053f3464091d164a6236fc36e37672d555a684461ab7e",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/_core/model-compatibility.test.ts": {
+      "sha256": "5aff2a260fd795dadee6697647100e0a441abfcaac496f0401b19c13caeafce5",
+      "tier": "test",
+      "contracts": []
+    },
+    "server/_core/model-compatibility.ts": {
+      "sha256": "49bad1905808c9d23d2965cfdbd3e1e02b40bb6bea12875d684ada676636eea6",
+      "tier": "critical",
+      "contracts": [
+        "llm-safety"
+      ]
+    },
+    "server/_core/navigation-trust-ui.test.ts": {
+      "sha256": "fddba2cc17c1c18fd8cac240e7e45f4d4a6a6e65de51d7760281c67948091443",
+      "tier": "test",
+      "contracts": []
+    },
+    "server/_core/notification.ts": {
+      "sha256": "550bf6544bf792b6d13c68539679deb363b70fbf07c0dbde189a98787f66f003",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/_core/oauth.ts": {
+      "sha256": "d2e2fe4532ec9d142e8d4d448b2c1d8cc9eddd45a1433ad843c07afa5c13efc1",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/_core/pdf-export.ts": {
+      "sha256": "a8a537cf9f0708db378020777de12a655e5b5527092efac18063ab3ebb21798d",
+      "tier": "critical",
+      "contracts": [
+        "document-integrity"
+      ]
+    },
+    "server/_core/privacy-policy-ui.test.ts": {
+      "sha256": "c5d38781071c1ed7d442bd022c6daf68613752c15b0b3b53d368786d214f03c0",
+      "tier": "test",
+      "contracts": []
+    },
+    "server/_core/pwa-development-guard.test.ts": {
+      "sha256": "dcdda0267033c38bc0f00bea0da179dcb9200a1b530553ca80d2883673f319da",
+      "tier": "test",
+      "contracts": []
+    },
+    "server/_core/release-version.test.ts": {
+      "sha256": "5b282043d830da3c2c9d792b39f0f63829f30e058b95baeb0993f1f0d56566b7",
+      "tier": "test",
+      "contracts": []
+    },
+    "server/_core/release-version.ts": {
+      "sha256": "d395311cc834cdf6530d71e4465dce6a2d73ccd6df58ebd3b706936ddcdcf622",
+      "tier": "critical",
+      "contracts": [
+        "pwa-and-runtime"
+      ]
+    },
+    "server/_core/rss-cron.ts": {
+      "sha256": "ba8ae8b337177d083d563f6d266c827e782ac8a476d25d794829136a3857b20d",
+      "tier": "critical",
+      "contracts": [
+        "legal-data-ksef"
+      ]
+    },
+    "server/_core/rss-fetcher.test.ts": {
+      "sha256": "f7e3c9d03d7eea04603d2a2ea175d4e711fb37bc50c74cb3b709f53a0e1abc90",
+      "tier": "test",
+      "contracts": []
+    },
+    "server/_core/rss-fetcher.ts": {
+      "sha256": "e5c96c303c87c4ab63a10ea2adc162b92f58ba4f623cbb6b87365d8ffa52c6e6",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/_core/scheduled-tasks.ts": {
+      "sha256": "66adcc7857e43a8d289a60fa6b03a83e3e190b41c2941e32fdcfd27469cf9e11",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/_core/sdk.ts": {
+      "sha256": "f8695b440e33ab7ce7b99ab1290877a8592dd7496e33408244a8985eafa2e560",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/_core/stefan-audit-pack.test.ts": {
+      "sha256": "73e6502db8b883e0ea3a2d0d947f5059c0cf235432fbad7cba048cd5df5f32d7",
+      "tier": "test",
+      "contracts": []
+    },
+    "server/_core/storageProxy.ts": {
+      "sha256": "3cf29c8cef866f447b5d0d57ce589006dd7d8d0bde17a9cd7a6f6916b8f080a1",
+      "tier": "critical",
+      "contracts": [
+        "pwa-and-runtime"
+      ]
+    },
+    "server/_core/subscription-handlers.ts": {
+      "sha256": "e108261508059bd4401d2c62fdc1f19b75f51a00e65ca1f0879000cb37380008",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/_core/subscription-products.ts": {
+      "sha256": "1e13f4dbf487e125bd631c437105428f3eb014de38fb6d596cbcd03ae0404853",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/_core/system-cache.ts": {
+      "sha256": "0a02dd2eab723e1d6d2b0bc0bbb4c13ff55ec8a9facd2afaf2fe85e5f935189b",
+      "tier": "critical",
+      "contracts": [
+        "persistence-and-access"
+      ]
+    },
+    "server/_core/systemRouter.ts": {
+      "sha256": "61bb2c904da1fa08a425f8882aa3b23003bba7266ce00b2d9fcd685e5d4bffaf",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/_core/trpc.ts": {
+      "sha256": "95679492e0478938f9bab6e3388ba6a95d3ab3329e6ff2eb9686e638cd07d98e",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/_core/types/cookie.d.ts": {
+      "sha256": "c2ed733d67b16ae4621164dbce09e99de0233b4a0ed05227bc35096822173c05",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/_core/types/manusTypes.ts": {
+      "sha256": "25b151f9571543cb51e217c94b7e2faa32dc14abdcd89ebafe3853774d380f86",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/_core/vite.ts": {
+      "sha256": "f34df492cfbf9851223507abfca92e37ce583803eb3d638313cbc84b4572c1fe",
+      "tier": "critical",
+      "contracts": [
+        "pwa-and-runtime"
+      ]
+    },
+    "server/_core/voiceTranscription.ts": {
+      "sha256": "c53b328b12e54adfacbc632e668c2b58b9954547ce9d3313907096c8b2db330c",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/_core/workspace-history-ui.test.ts": {
+      "sha256": "1c54c1bdd08d0b0a5611d78f841f7befb8b224a48d242c1e653ecf288e4014cc",
+      "tier": "test",
+      "contracts": []
+    },
+    "server/analysis.pdf.test.ts": {
+      "sha256": "304594eef6a4be63537315989221bd74f3f73dae1a366d87cc20ca011a2f943e",
+      "tier": "test",
+      "contracts": []
+    },
+    "server/auth.logout.test.ts": {
+      "sha256": "074bddf34a18b9f06849a360c4ae179edc4aef47f5a71c846480dd65e4aca967",
+      "tier": "test",
+      "contracts": []
+    },
+    "server/auth.me.test.ts": {
+      "sha256": "1b3b78f7591449de665349ab89b642c35f02bfb77c1803aa83f8dddd87f3d60b",
+      "tier": "test",
+      "contracts": []
+    },
+    "server/db-dev.ts": {
+      "sha256": "46da246de4da8d5b7d175f91dc655c62ac734ba9cf9cedffbe086c580b4fb181",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/db-documents.ts": {
+      "sha256": "2b6404facc07295ce61d0104134ec0ce634ee94be743b94a931a9c388d81d33b",
+      "tier": "critical",
+      "contracts": [
+        "persistence-and-access"
+      ]
+    },
+    "server/db-legal-news.ts": {
+      "sha256": "d9a288a2c4fae40c495a096255ac72ae61f0493719611f97d95dad26b3ee8759",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/db-model-audit.ts": {
+      "sha256": "0ee27a86a3c220149120f07a0fcb1f7504d9cbe1561ee0817aec806e3e470f5a",
+      "tier": "critical",
+      "contracts": [
+        "llm-safety"
+      ]
+    },
+    "server/db-notes.ts": {
+      "sha256": "a11532e52681f0d57dbf40ba5a33867848b28abd52185d71b998420de6e804ac",
+      "tier": "critical",
+      "contracts": [
+        "persistence-and-access"
+      ]
+    },
+    "server/db-sessions.ts": {
+      "sha256": "a2f520fedbee0c63f8b53e30be0ae3ea3074476c8cf09c8483384dbd3850902f",
+      "tier": "critical",
+      "contracts": [
+        "persistence-and-access"
+      ]
+    },
+    "server/db.ts": {
+      "sha256": "16cff90aae436a580326ab9ad143cd9979dc627a4570d2eb225124739ab983a1",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/dev.test.ts": {
+      "sha256": "c1d47df6fe5a319a32243f869e2f5285375984e537a4ef0bcec50de96e514306",
+      "tier": "test",
+      "contracts": []
+    },
+    "server/documentConverter.ts": {
+      "sha256": "b0ff9c337211f6f1e03abace88f00fa332e5b0145dcf45e26ff5b7ff585de6f2",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/ksef-client-cards.test.ts": {
+      "sha256": "30f54510b03ea04fd44a9a2f0aef856558a360039ef63fdd0e5f4f84db7aec48",
+      "tier": "test",
+      "contracts": []
+    },
+    "server/ksef-knowledge.ts": {
+      "sha256": "5366eba22192e04427d7f5f5bb8619dd39b9f5fe1cc5fe68cd039e15b58c5fec",
+      "tier": "critical",
+      "contracts": [
+        "legal-data-ksef"
+      ]
+    },
+    "server/ksef-monitor.test.ts": {
+      "sha256": "c48392179a8130d1567130a82a85945c8dd55034c3f914fb084cf73dab3b1230",
+      "tier": "test",
+      "contracts": []
+    },
+    "server/ksef-templates.test.ts": {
+      "sha256": "ea4d18a324e67c3290a70e837172083793b834601244a7cca1fb6c701560efed",
+      "tier": "test",
+      "contracts": []
+    },
+    "server/ksef-templates.ts": {
+      "sha256": "1ba21b1eeba0ba647ee7d4e86b06b6e16f928cf33017b760ccdb8d77b776aa7f",
+      "tier": "standard",
+      "contracts": []
+    },
+    "server/ksef.test.ts": {
+      "sha256": "5d9badae03aae0a66b0bf0986cd8c6a79bdbd2fd8b9480c2ca1b514e0a638186",
+      "tier": "test",
+      "contracts": []
+    },
+    "server/routers.ts": {
+      "sha256": "3162f639af3453765d9d0333fec1eb2186fab50d229fcc0b5fa83c9c45210545",
+      "tier": "critical",
+      "contracts": [
+        "llm-safety"
+      ]
+    },
+    "server/seasonal-banners.test.ts": {
+      "sha256": "cf4321f7272cdd6c84a73ee3eaf00b79742ccca336c7799e0301ee2ed7fe12ab",
+      "tier": "test",
+      "contracts": []
+    },
+    "server/storage.ts": {
+      "sha256": "3188209fe6395442c8e87c7d3d587a1710c8334f048d2cbb688d679b4c43c71f",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/App.tsx": {
+      "sha256": "d1c4a21958c9cfa2a28f951502e15235209e06e7c53e0c118815b87f63786e3c",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/_core/hooks/useAuth.ts": {
+      "sha256": "77477fe341900c7555e5d1f1ef4797423c7400b6ac378e3162cd664877a72689",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/AIChatBox.tsx": {
+      "sha256": "c97ae745ae8f4db0b5e1a96d851fe9fd6943c53bc1bc6c28603bce36058ce28a",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/AccountAccess.tsx": {
+      "sha256": "231d0c7cb8da04650a691bdb45e829c29c6a0119672d1f00b8bab41de680f652",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ChatWorkspacePanel.tsx": {
+      "sha256": "693ace1db65fd730c86b58b7d4bc64bc0f625ae8acee2ca2c9bad22968c444ac",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/DashboardLayout.tsx": {
+      "sha256": "63ac14f6d02d1ea727bd4f1fcb40d56d993f96a8241ee53ea8908c264ce19fbd",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/DashboardLayoutSkeleton.tsx": {
+      "sha256": "7b6eab8ac4d4118bdf2be88f23e7db5318d975ac03e6451f773d5eb15feb34cc",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/DocumentPreviewModal.tsx": {
+      "sha256": "3dce053a1f3151c1da498564b391d797ba3d9e58d3b3ba38cec432a4b3949557",
+      "tier": "critical",
+      "contracts": [
+        "document-integrity"
+      ]
+    },
+    "client/src/components/ErrorBoundary.tsx": {
+      "sha256": "3b0bdb7a19758fcd440138ccfb5f306b96836564f15d7c8c9663d7dd7417e972",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/FloatingNotesPanel.tsx": {
+      "sha256": "2fd7f295936911badb9829e2ff46b5b0293f6bff28d5648dc9038402a6e83097",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ManusDialog.tsx": {
+      "sha256": "66237a756ee50b4195a074f689aa97dd4ec445cbbc6f0d11f12bb32a6fb4cd0d",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/Map.tsx": {
+      "sha256": "931413fea95936e68f872bc34733138f9e11a656446b1a56a98fba9532954e22",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/OfficialUpdatesBar.tsx": {
+      "sha256": "c685842065be9ed9630e973af2f9253503eacb2047894503cb9bcd63db6b14f5",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/OfflineIndicator.tsx": {
+      "sha256": "a449bc1d6fd1943269865b55078da0822332746aa38563c76788b0ca22e2d85b",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/SeasonalBanner.tsx": {
+      "sha256": "7b9f5b19f30042b6bce1e43240cdf09a7f7275a7b71515869eb33ef3c42044ba",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/StefanLayout.tsx": {
+      "sha256": "28fd028aa1f678ef04005c9947a6584a1b09b93c40cc408b87a0258a0a88148c",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/accordion.tsx": {
+      "sha256": "7b96cf50388ad3d07be64924ab33ba5f63b79a6a5749ebe4d31c789c0bc00d44",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/alert-dialog.tsx": {
+      "sha256": "aeecd7967eb0be3bad2753b6633d9a43cc4c08cb35de872ffdc0b9f2b6a9b26c",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/alert.tsx": {
+      "sha256": "eccfc7f6ca9d51407cb413a3ca4b5ac721898ac93d38e95c02c35188ad674abe",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/aspect-ratio.tsx": {
+      "sha256": "654f5d6e9ed17472305d7e6fc5de30453875ffae585f5d064aedc9e6945bdbb0",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/avatar.tsx": {
+      "sha256": "c2382ff71d7ef3492096ed6ef35bf82e1fd421a81d55ca80453f5f5138eac360",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/badge.tsx": {
+      "sha256": "51fd797c59e63d164ade736769f19f26e41c157daba29aa0b327b3b226f4d4ac",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/breadcrumb.tsx": {
+      "sha256": "dd84657e30691ea7f14a785c13b660d6cd626c08ba1df8439c3eca858ee3cd7e",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/button-group.tsx": {
+      "sha256": "ba1d824f0f4d8b5dd78a80fa766e3543eefb9173143652be2c7cb765af1864f5",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/button.tsx": {
+      "sha256": "b08b4785e03566c7a6063b3d57234deae41649676870cbbb9ab2448d816e1739",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/calendar.tsx": {
+      "sha256": "89308bce82e8b23b611cfbc88bc19f7b341d7109ab9a2838c04cb50922113501",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/card.tsx": {
+      "sha256": "1397e7d264d90162220ea7473b311e434651886267c71e7f58d4488be9d8ff39",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/carousel.tsx": {
+      "sha256": "42f66e6fde568c209df5d58a4ca13c3ae92d120a04fd99f7be695d6a570ef0a9",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/chart.tsx": {
+      "sha256": "47c4de202fe1dc229af94d2c86197251d279bee131d2a6fb75ab9e58cec71aab",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/checkbox.tsx": {
+      "sha256": "4fc309590e66d3c41e3be5fb73f988b0e916e7bf5fff321c22c3a64cd4fe97cf",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/collapsible.tsx": {
+      "sha256": "95b5b9ea89a4105045c58b7eba539e57a1f4abc5a54d43ea0f7168f46b645eeb",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/command.tsx": {
+      "sha256": "47910540789d4de9e890de63bfc0046f9cf6bfaa86d496a98c79622900f8520c",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/context-menu.tsx": {
+      "sha256": "fe63c0a0dcabe749874ad19e07dee8418337c62dd64452fc08b5abf27b49b9eb",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/dialog.tsx": {
+      "sha256": "3ffd83bd2940c1191fde091bc47311aebc2b79d78824965a5c446115e58190aa",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/drawer.tsx": {
+      "sha256": "573deecc31f90fcd96f53a37b2e5363eb326fe737cbdb28cac38a5d014734fc8",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/dropdown-menu.tsx": {
+      "sha256": "ede99252b737a29eb1f05370956e2b842be161b6a661f1429155ac561653d029",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/empty.tsx": {
+      "sha256": "c0b612929b15fd498b984d8d98d1b082a3eb294be5aa8eb9cb53b67cf152f465",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/field.tsx": {
+      "sha256": "f093424ca5eadf43d46b020ed780aee7aa5f6d90d0b48fb50c031e3d7b0528c7",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/form.tsx": {
+      "sha256": "0157362d572713567d989b726277879e75c60c24684ade4aef854867dc2fac48",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/hover-card.tsx": {
+      "sha256": "bdfe831708e7de6b9fbb14d8fe5af5a0985f67cff3c2b5755b4b570c3b4e7ad5",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/input-group.tsx": {
+      "sha256": "f62f2be2ad4c2c7711e7b25b0d6c03572f7871cb4022e9f4f6860dcd77dd9e57",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/input-otp.tsx": {
+      "sha256": "45fc7fed882aa5024d8eea52d9b392d13b1d80f2b7f846365bc2586e3d16253d",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/input.tsx": {
+      "sha256": "0aaad971269e84519fb14928a70777db539b4cacf9f145fecd905ba483a199c6",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/item.tsx": {
+      "sha256": "89f2ed48c2270064d63e0a40f755c1da14e99e7db46bceac56d6dee7b45b8798",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/kbd.tsx": {
+      "sha256": "4f8f3e521b2b007643b8a2c8f86cf547bd87e703dc2bed067083ca48f901d6ad",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/label.tsx": {
+      "sha256": "7fdad17d8e83912ad0cfc372c551a901ab98523ef17c0792a17c592a147db732",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/menubar.tsx": {
+      "sha256": "53fb1c058fabaf0cfb3fb2cfdb9b17ccc8762376d62cc011150d919209b82c1a",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/navigation-menu.tsx": {
+      "sha256": "aafccbe2b05d9f80b7d007301b51aaede4692efc468304c5fb11b21cd0c0ef43",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/pagination.tsx": {
+      "sha256": "8f0d822b4688eb131e37fbf2330e19b269ab6487583be3249b98f3b68bb07928",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/popover.tsx": {
+      "sha256": "5e7bec05904d9091a7b53963f5b49660bf3564b02a057ef8640ab6855d6e32fd",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/progress.tsx": {
+      "sha256": "2297e3c13d5b2a04a9164c3900c8cae2e477c07ebed35c4bbda98d1232ab7b7e",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/radio-group.tsx": {
+      "sha256": "025f03d81d4e304eb27d94e6517f37072a3941df8f8603ac55cfb42b17cd99ef",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/resizable.tsx": {
+      "sha256": "52e1027a4b4a5f70f0479f69fe40046dfa112952b7e568292727e1618348ee80",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/scroll-area.tsx": {
+      "sha256": "793c5d69e6e5ce8bcbe453b8834d53f3a90839fc8e8e1f9fe5f77e7626566677",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/select.tsx": {
+      "sha256": "40945665ec8363e55ae38f26115ee763cbc5548bed585eed569d406cbc4b7a75",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/separator.tsx": {
+      "sha256": "23bbf3f74d01f55533f6f22ebbc2b299137421e07896cb7af21245756a10c27e",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/sheet.tsx": {
+      "sha256": "ab22e38f2cf312a31a84fb91f7e912f0da66e809f6e1ae675ec6cf0c8ec0ba61",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/sidebar.tsx": {
+      "sha256": "782ec3ba8a570c9a0f6ec12d7e1c1efdee5e02eb2da7aa46131c734e7f7bbea8",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/skeleton.tsx": {
+      "sha256": "1f75b999a5ad2f65e8fb807faa2b3fccef9eb333996fb4c9030575dac7393091",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/slider.tsx": {
+      "sha256": "9c458646597836916678a9bce2f3064d4d5cdb0c65d32d92bc71f57d7569fb6b",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/sonner.tsx": {
+      "sha256": "a65fe9ded89363ec546f28401a26caec1a3aa38c52259eb829cfa33723dbe3a5",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/spinner.tsx": {
+      "sha256": "ecd836d476573adb4403747c3457339276805433c20eacf3408303b76ec283ff",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/switch.tsx": {
+      "sha256": "688cccb52220e05f6770fb5e8296375f2a784bcf6585eb26a721a9f29361ab60",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/table.tsx": {
+      "sha256": "085566291cf03c9fea590aa9b77339feebf04cf8ce23494a3667f84bf4811e29",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/tabs.tsx": {
+      "sha256": "394b62295cee5185e858bcabfafcd5a7287910944c962fbd9c1c06444b22cedb",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/textarea.tsx": {
+      "sha256": "ffbad961ec02f9ca23f4157daa1a4139960c4477a245c216a793b4692dec142c",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/toggle-group.tsx": {
+      "sha256": "92e7640e30c4ae3ffd775e9a3d845327c26d9ce0f9f39555c2e7cfc2c8671c4d",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/toggle.tsx": {
+      "sha256": "a922c5e0534b9fd556ff8a8b56e25f7d24544be6050472cdd1ea003b8a0f3e47",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/components/ui/tooltip.tsx": {
+      "sha256": "6f0c581e2018d676e43c0b4b5aeb62d3fe68e65907cf748548208d75ac212677",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/const.ts": {
+      "sha256": "65400a775381cec4ae19f68373550f1318fb45970313ad91e91a1adc42b0bacc",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/contexts/ThemeContext.tsx": {
+      "sha256": "e025cdb51ad747757235b16dccbb39b5e949cdf93fa9a822ff81ef6e32f65924",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/hooks/use-toast.ts": {
+      "sha256": "e4d4e9714c09575e59440546f0bb01d5fb794147f70e82e83250aacc74d4cf60",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/hooks/useComposition.ts": {
+      "sha256": "674c515075a2f318d4ec2291313ba552488de0b2c1aac7f36f3d71c4e34d434e",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/hooks/useDocumentBuffer.ts": {
+      "sha256": "e20651e452f7db697f7115c8602409deb5c799b2450e27b2366606e44f8f178e",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/hooks/useMobile.tsx": {
+      "sha256": "464e778a9da49481e3c6dac4f92ff589e01349b33063a74c45435cfeed81e1c0",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/hooks/usePersistFn.ts": {
+      "sha256": "60cc14f39a3f8b212d7baf4beeaf35f81e09a7c78e4154bcca3477e010879511",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/hooks/useUndoRedo.ts": {
+      "sha256": "423ef4a3b52473a15ca496b4bfbc893d40531d04081f0286636984bfa7865652",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/index.css": {
+      "sha256": "711a48a6d9b3f2671dfffb882d70e2f39ebeb993976affdf4fd5155271b31087",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/lib/brandSignature.ts": {
+      "sha256": "0bfefd2c51baa807a9c5b835e38eeb49f6ea21e3e4a5762dc2ed09fe94666a15",
+      "tier": "critical",
+      "contracts": [
+        "document-integrity"
+      ]
+    },
+    "client/src/lib/knowledgeBaseCache.ts": {
+      "sha256": "30373aca9848ff69df79b376117f5f683426df3495def2571a4456ab82a475de",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/lib/publicationDate.test.ts": {
+      "sha256": "dc2a26f3a3044a27244afdefacc7c383559301d1b8a71ffbb35016e965ce7135",
+      "tier": "test",
+      "contracts": []
+    },
+    "client/src/lib/publicationDate.ts": {
+      "sha256": "35f6d9eab24e6df4757222d29e3f020cf49e78881c12a6823bec6f627eb8d336",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/lib/releaseConsistency.test.ts": {
+      "sha256": "d6d0883015e9897ce1712817eb1eac79fb3083da9d64acc366d564a7f21e3ac1",
+      "tier": "test",
+      "contracts": []
+    },
+    "client/src/lib/releaseConsistency.ts": {
+      "sha256": "1c3465b937de4c054a4bd0e6e8c0be6fe0355484cc5feda249e010c18b6eb693",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/lib/seasonal-banners.ts": {
+      "sha256": "4db4508f12a090de0216a5e0f7a93510e5d2298b503b315997b8eeb6aaea874b",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/lib/syncQueue.ts": {
+      "sha256": "a7366c0eeb1ebe869da58e86f0653086a801a49ce40f63347a2e869a1a88c4e2",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/lib/tokenCounter.ts": {
+      "sha256": "0cc0aacb76eadf93ec21510aa3448e92cfccfe37096829adfbd1910ad17b60d4",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/lib/trpc.ts": {
+      "sha256": "d883ad43f46eaf73342924feaf5342ce601d04abe1a828076625071931cc0ef3",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/lib/trpcClient.ts": {
+      "sha256": "b0067043ffbd4cec90639ca74a68eecf4d42b6bb68024425e02adf485d5fc547",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/lib/utils.ts": {
+      "sha256": "d1f1e0d62cb8d8d1e04c26e14de842d8a151f75812d81b046c65b5d1fe8e4b27",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/main.tsx": {
+      "sha256": "f4da95f106bbdc1cca6bd4eace4a7abe287b10aa38e04c2918efc2158123f397",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/pages/About.tsx": {
+      "sha256": "7d847ef1cdf3ff3e4af1e4b8ae6ecb843fbea765935908dc4b31cdd354e2dc8a",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/pages/Analysis.tsx": {
+      "sha256": "961ad4299fdecd24bb3e4e2366da35cda61941598058937821cbc3ba32ac742e",
+      "tier": "critical",
+      "contracts": [
+        "document-integrity"
+      ]
+    },
+    "client/src/pages/Chat.tsx": {
+      "sha256": "426101bd5656a76d9631648ac86b08db3ff11f3a76f0337d067c730769aa13a2",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/pages/ComponentShowcase.tsx": {
+      "sha256": "d3905f3521d77e97b7d7c6198a6f915bf45f68223c74552e7e728f4fe10ca79a",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/pages/DevPanel.tsx": {
+      "sha256": "62f2f2885696541950eafe0c1e6eebcaae93174aa3ee709d509366c9688d059d",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/pages/Help.tsx": {
+      "sha256": "6ed4417875441743bbd44103767987e2bc61cdca7266b47be191e53616ff539e",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/pages/Home.tsx": {
+      "sha256": "6bf9f944d0715c39756ede5d7f6a272b8be35c5bfd0b5ec41630e805a9bb1763",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/pages/KSeF.tsx": {
+      "sha256": "fd3a4f9a3e985e96b540bfddd210b18eb73b00cd39468836242a14391327e4e7",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/pages/Knowledge.tsx": {
+      "sha256": "ef9322dd2f7581de70b9a66700614366372268a3d0aca85f3e9bfc7921bebb8d",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/pages/KsefClientCards.tsx": {
+      "sha256": "bc0ac461133a859eb4fcec9fa024771e80458af6f435343473765524a55ece13",
+      "tier": "critical",
+      "contracts": [
+        "document-integrity"
+      ]
+    },
+    "client/src/pages/NotFound.tsx": {
+      "sha256": "4062794318dde4d0a321e0332cdee2cea68d19c1d9d81889ff425b02ed183f64",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/pages/Notes.tsx": {
+      "sha256": "4ac8788ddec10d6311ca72b15c6099eb2eab43a6f99a193293798029c80d1ce1",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/pages/Pricing.tsx": {
+      "sha256": "4af6e05e0e33db5808eed7b701ace401193957939294c9a14ce84a8110ce3d30",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/pages/Privacy.tsx": {
+      "sha256": "c10d8dc920d412fd2a70babd5213044cf58901fcdd37ea5b07a8445020f5ec10",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/pages/Sessions.tsx": {
+      "sha256": "61c02d37319087773ea0d23e63e139c389a45e3e3ad04003a43666319f7affc5",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/pages/Settings.tsx": {
+      "sha256": "8b378ec059684234f624772e93c1899f5d2311daecd6396d41b4c6500d2724e9",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/src/pages/Templates.tsx": {
+      "sha256": "d712f9b72fa45de5797eb70040e821c8e9525b94a9dc1e74a0f8976c78aca3ff",
+      "tier": "critical",
+      "contracts": [
+        "document-integrity"
+      ]
+    },
+    "client/public/cache-cleaner.html": {
+      "sha256": "41569f608cb7db8c33312e80bfccd8804912f0309e92d371c7ffbfb57c933bc6",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/public/manifest.json": {
+      "sha256": "aabdcda0b8f8a74c93755e57f6c87c764a492ad94e8af3a61c6cf7aaf294c41d",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/public/offline.html": {
+      "sha256": "7b171531050b9512c76d1d34661094556ff9c430ec6266df2662fddd2cfa6aff",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/public/sw.js": {
+      "sha256": "2ea1c92e3f358dfa13116055a804276b411fda7aebd41c0bbecf79bf27039164",
+      "tier": "critical",
+      "contracts": [
+        "pwa-and-runtime"
+      ]
+    },
+    "drizzle/meta/0000_snapshot.json": {
+      "sha256": "a97993ae15499a21e3e40403bed28c8c44b80c639ddf867e8b8b202d36c68fc6",
+      "tier": "standard",
+      "contracts": []
+    },
+    "drizzle/meta/0001_snapshot.json": {
+      "sha256": "d4ec08bf264138b6434b944a1f4fd5be98b82360fecbb6b1e1736d72a4980f72",
+      "tier": "standard",
+      "contracts": []
+    },
+    "drizzle/meta/0002_snapshot.json": {
+      "sha256": "baf5bb582c60966603ece8efb64a634eefc9babee533a90f9e6fc8ccf03e4f02",
+      "tier": "standard",
+      "contracts": []
+    },
+    "drizzle/meta/0003_snapshot.json": {
+      "sha256": "da66c5f3849b49b6633a4afdb11dd37cd36cf95025c1e7e6c5b1c1657e83f722",
+      "tier": "standard",
+      "contracts": []
+    },
+    "drizzle/meta/0004_snapshot.json": {
+      "sha256": "f66189f4862811df01091c5b27211f2cc8335f199315d536f221e5b1c47a7d1f",
+      "tier": "standard",
+      "contracts": []
+    },
+    "drizzle/meta/0005_snapshot.json": {
+      "sha256": "09b6d6fd2566422685fc5b9a0627cad8aa8ea6163dde1edf8ed0b6b202f86fbf",
+      "tier": "standard",
+      "contracts": []
+    },
+    "drizzle/meta/0006_snapshot.json": {
+      "sha256": "6f8546e2c303e3650b9d050843344b23fae3d25283fbdf3e287c54946c8bb581",
+      "tier": "standard",
+      "contracts": []
+    },
+    "drizzle/meta/0007_snapshot.json": {
+      "sha256": "1c7b90afc570925b8f425974513f225978ef280d07d40b6c8ebe9c5634426e74",
+      "tier": "standard",
+      "contracts": []
+    },
+    "drizzle/meta/0008_snapshot.json": {
+      "sha256": "201411fec6b397c45291059f32ed58129d13c82a69435b32b5d9625797fca58a",
+      "tier": "standard",
+      "contracts": []
+    },
+    "drizzle/meta/0009_snapshot.json": {
+      "sha256": "899eb64ad6a27c72e15020cb10c0d41f14ab80128119620409e105c2c5cdec18",
+      "tier": "standard",
+      "contracts": []
+    },
+    "drizzle/meta/_journal.json": {
+      "sha256": "f4679170c78751997f8b22e343568f99dd985eba3ef5f70d2282dd508778fe91",
+      "tier": "standard",
+      "contracts": []
+    },
+    "drizzle/relations.ts": {
+      "sha256": "85acb8ece8fbb5031fc56fa8c70338d9b8b06ef3b032391fff8532c6373c7186",
+      "tier": "standard",
+      "contracts": []
+    },
+    "drizzle/schema.ts": {
+      "sha256": "127265b4ec89db5ec3ef70e178dbc672305c2b4c19e4e528254b1c9c99659661",
+      "tier": "critical",
+      "contracts": [
+        "persistence-and-access"
+      ]
+    },
+    "package.json": {
+      "sha256": "f64092cde6fe1bd8c8e86446e47abdc808e6505ffddd8ea75eeb8e1baae0512e",
+      "tier": "standard",
+      "contracts": []
+    },
+    "vite.config.ts": {
+      "sha256": "3ad1bbbdd133da89768347d35f79cf3204841b3aaf1cbeb12b89dd7bb1cce685",
+      "tier": "critical",
+      "contracts": [
+        "pwa-and-runtime"
+      ]
+    },
+    "tsconfig.json": {
+      "sha256": "4bea0e0003e3c943f455346abc4854d1666d604adbaa6aa8eda11f94fb8f1396",
+      "tier": "standard",
+      "contracts": []
+    },
+    "client/index.html": {
+      "sha256": "8a253b1869d52ac377e331a7be1eeb77c35e5fd33834f2eef347a2ee19d75d0b",
+      "tier": "critical",
+      "contracts": [
+        "pwa-and-runtime"
+      ]
+    },
+    "scripts/stefan-diff-audit.mjs": {
+      "sha256": "225dcb8a3db4fe3c50446c835d858a29e7e57b71b342f9017dea5cd91dc1bf64",
+      "tier": "standard",
+      "contracts": []
+    },
+    "scripts/build-release.mjs": {
+      "sha256": "b7a526302e506f93f6f47f54e5b8fdb484538b4974591038e29da805e27c04ff",
+      "tier": "standard",
+      "contracts": []
+    }
+  }
+}
